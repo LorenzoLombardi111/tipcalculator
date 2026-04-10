@@ -1,0 +1,29 @@
+# freetipcalculator.app
+
+> Free online tip calculator. Enter your bill, pick a tip percentage, split between people, and see tip amount, total, and per-person cost instantly. No signup, no tracking — runs in your browser.
+
+## Key Facts
+- Tip presets: 10%, 15%, 18%, 20%, 22%, 25%, 30%, and custom
+- Split bills between 1 to 20 people
+- Shows tip amount, total with tip, and per-person amount
+- All calculations happen client-side in the browser
+- No server communication, no analytics, no cookies
+- Part of the Freesuite collection at freesuite.app
+
+## Features
+- Instant calculation as you type
+- 8 preset tip percentages plus custom input
+- Bill splitter for groups up to 20
+- Works offline as a PWA
+- Dark mode (shared across all Freesuite tools)
+- Mobile-first responsive design
+
+## Pages
+- [Home](https://freetipcalculator.app/) — Main tip calculator tool
+- [vs Calculator.net](https://freetipcalculator.app/pages/vs-calculator-net) — Comparison with Calculator.net
+- [vs Omnicalculator](https://freetipcalculator.app/pages/vs-omnicalculator) — Comparison with Omnicalculator
+- [Restaurant Tip Guide](https://freetipcalculator.app/pages/restaurant-tip-guide) — How much to tip at restaurants
+- [Delivery Tip Guide](https://freetipcalculator.app/pages/delivery-tip-guide) — How much to tip delivery drivers
+- [Bill Splitter](https://freetipcalculator.app/pages/bill-splitter) — How to split restaurant bills
+
+For the complete text content of all pages, see [llms-full.txt](https://freetipcalculator.app/llms-full.txt).

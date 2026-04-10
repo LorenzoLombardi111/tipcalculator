@@ -1,0 +1,135 @@
+# freetipcalculator.app — Full Site Content
+
+> This file contains the complete text content of all pages on freetipcalculator.app, formatted in Markdown for AI crawlers.
+
+---
+
+# Page: Home — Free Tip Calculator Online
+
+freetipcalculator.app is a free online tip calculator that helps you figure out how much to tip and how to split the bill. Enter your bill amount, choose a tip percentage, select how many people are splitting, and see the results instantly. All calculations happen in your browser — freetipcalculator.app has no ads, no tracking, and no signup.
+
+## How do I use freetipcalculator.app?
+
+Enter your bill total in the amount field. Select a tip percentage from the presets (10%, 15%, 18%, 20%, 22%, 25%, 30%) or type a custom percentage. Choose how many people are splitting the bill. freetipcalculator.app instantly shows the tip amount, the total including tip, and the per-person amount.
+
+## What is a standard tip percentage?
+
+In the United States, 15-20% is standard for sit-down restaurants. 18% is a common default. For counter service or takeout, 10-15% is typical. For exceptional service, 25% or more is generous. Tipping customs vary by country — freetipcalculator.app lets you pick any percentage from 0 to 100.
+
+## How do I split a restaurant bill evenly?
+
+Use the split control on freetipcalculator.app to divide the total (bill plus tip) equally between 1 to 20 people. The per-person amount updates instantly as you adjust the number of people. This is the easiest way to figure out what each person owes at a group dinner.
+
+## How much should I tip for delivery?
+
+For food delivery, 15-20% of the order total is standard. For large or complex orders, or deliveries in bad weather, consider tipping more. freetipcalculator.app works for any tipping scenario — restaurants, delivery, rideshare, salons, or any service.
+
+## Is freetipcalculator.app free and private?
+
+freetipcalculator.app is completely free with no usage limits and no account required. All calculations happen locally in your browser. There is no server communication, no analytics, no cookies, and no tracking. freetipcalculator.app is part of the Freesuite collection at freesuite.app.
+
+### FAQ
+
+**Is freetipcalculator.app completely free?** Yes. freetipcalculator.app is 100% free with no ads, no sign-up, and no usage limits.
+
+**How do I calculate a tip?** Enter your bill amount, select a tip percentage, choose how many people are splitting, and see results instantly.
+
+**What is a standard tip percentage?** In the US, 15-20% is standard for restaurants. 18% is a common default.
+
+**Can I split the bill?** Yes. Split between 1 to 20 people. The per-person amount includes tip.
+
+**Does it work offline?** Yes. freetipcalculator.app is a PWA that works offline after your first visit.
+
+**Is my data private?** Yes. All calculations happen in your browser with zero tracking.
+
+---
+
+# Page: freetipcalculator.app vs Calculator.net
+
+Both freetipcalculator.app and Calculator.net offer free tip calculators. freetipcalculator.app is a dedicated tip calculator that runs entirely in your browser with no ads and no tracking. Calculator.net is a comprehensive calculator platform with dozens of tools but includes ads and sends data to servers.
+
+freetipcalculator.app has no ads, processes everything locally, works offline, has dark mode, and focuses solely on tip calculation with bill splitting. Calculator.net has display ads, requires a server connection, does not work offline, has no dark mode, and is part of a larger calculator platform.
+
+If you want a fast, clean, private tip calculator, freetipcalculator.app is the better choice. If you need a comprehensive suite of financial calculators beyond tipping, Calculator.net offers more tools.
+
+---
+
+# Page: freetipcalculator.app vs Omnicalculator
+
+Omnicalculator offers 3,000+ calculators covering finance, health, math, and more. freetipcalculator.app is a focused tool that does one thing well — tip calculation and bill splitting with no distractions.
+
+freetipcalculator.app is privacy-first with no data collection, has a clean single-purpose interface, works offline, has dark mode, and loads instantly. Omnicalculator collects usage data, has a complex multi-tool interface with ads, requires internet, has no dark mode, and loads slower due to platform overhead.
+
+If you just need to calculate a tip quickly, freetipcalculator.app is faster and simpler. If you need calculators for many different topics, Omnicalculator offers broader coverage.
+
+---
+
+# Page: Restaurant Tip Guide 2026
+
+Tipping at restaurants in the United States follows these general guidelines: sit-down restaurants 15-20%, fine dining 20-25%, buffet or self-service 10-15%, counter service 10-15%, takeout 0-10%, coffee shop 10-15%, and bar service 15-20% or $1-2 per drink.
+
+18% is the most common default tip percentage in the US. For large parties of 6 or more, many restaurants add an automatic gratuity of 18-20%. Always check your bill to avoid double-tipping.
+
+Mental math shortcuts: for 10%, move the decimal point one place left. For 20%, double the 10% amount. For 15%, add half of the 10% amount. For 18%, calculate 20% and subtract a small amount. Or just use freetipcalculator.app for instant accuracy.
+
+Tipping customs vary significantly by country. In Japan and South Korea, tipping is not expected and can be considered rude. In most of Europe, a 5-10% tip is common but not required. In the US, tips are a significant portion of service workers' income.
+
+---
+
+# Page: Delivery Tip Guide 2026
+
+Standard tipping for delivery services in 2026: food delivery apps (DoorDash, Uber Eats) 15-20%, pizza delivery 15-20% or $3-5 minimum, grocery delivery 10-15% or $5 minimum, rideshare (Uber, Lyft) 15-20%, furniture or appliance delivery $5-20 per person, and flower delivery 10-15%.
+
+Tip more in these situations: bad weather (rain, snow, extreme heat), long distance deliveries, large or heavy orders, holiday deliveries, and deliveries that require stairs or difficult access.
+
+Delivery drivers often earn low base pay and rely on tips for a significant portion of their income. A generous tip directly supports the person bringing your order. freetipcalculator.app makes it easy to calculate the right tip for any delivery.
+
+---
+
+# Page: Free Bill Splitter Online
+
+freetipcalculator.app includes a built-in bill splitter that divides the total (including tip) evenly between 1 to 20 people. Enter the bill amount, pick a tip percentage, set the number of people, and the per-person amount appears instantly.
+
+How to split a bill: Step 1 — enter the total bill amount. Step 2 — choose tip percentage. Step 3 — set how many people are splitting. The per-person amount is calculated automatically.
+
+Example: A $156 dinner for 4 people with 18% tip. Tip: $28.08. Total: $184.08. Per person: $46.02.
+
+When to split evenly: group meals where everyone ordered similarly, casual dining with friends, work lunches. When to split by item: one person ordered significantly more, someone didn't drink alcohol, dietary restrictions meant different price ranges. freetipcalculator.app handles the even split — for itemized splitting, calculate each person's subtotal separately.
+
+---
+
+## About freetipcalculator.app
+
+freetipcalculator.app is a free, browser-based tip calculator and bill splitter. It is part of the Freesuite collection of 200+ free tools at freesuite.app. Every tool in the suite runs entirely in the browser with zero tracking, no analytics, and no server communication.
+
+### Why use freetipcalculator.app?
+
+- Free forever — no signup, no usage limits, no ads
+- Private — all calculations happen in your browser
+- Fast — instant results as you type
+- Simple — bill amount, tip %, split, done
+- Offline — works without internet as a PWA
+- Mobile-first — designed for phones at the restaurant table
+
+### Tipping quick reference
+
+- Sit-down restaurant: 15-20%
+- Fine dining: 20-25%
+- Food delivery: 15-20%
+- Coffee shop: 10-15%
+- Hair salon: 15-20%
+- Rideshare: 15-20%
+- Hotel housekeeping: $2-5 per night
+- Valet: $2-5
+
+---
+
+## More free tools from Freesuite
+
+- [freeunitconvert.app](https://freeunitconvert.app) — Unit Converter
+- [freewordcounter.app](https://freewordcounter.app) — Word Counter
+- [freepasswordgenerator.app](https://freepasswordgenerator.app) — Password Generator
+- [freejsonformatter.app](https://freejsonformatter.app) — JSON Formatter
+- [freeqrcodegen.app](https://freeqrcodegen.app) — QR Code Generator
+- [freenotepad.app](https://freenotepad.app) — Notepad
+- [freebase64.app](https://freebase64.app) — Base64 Encoder/Decoder

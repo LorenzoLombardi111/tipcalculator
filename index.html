@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Tip Calculator Online — freetipcalculator.app</title>
+    <meta name="description" content="Calculate tips and split bills instantly for free. Choose tip percentage, split between people, and see totals. No signup — runs in your browser.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://freetipcalculator.app/">
+    <meta name="theme-color" content="#faf9f6">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <meta property="og:title" content="Free Tip Calculator Online — freetipcalculator.app">
+    <meta property="og:description" content="Calculate tips and split bills instantly for free. Choose tip percentage, split between people, and see totals. No signup — runs in your browser.">
+    <meta property="og:image" content="https://freetipcalculator.app/og-image.svg">
+    <meta property="og:url" content="https://freetipcalculator.app/">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Tip Calculator Online — freetipcalculator.app">
+    <meta name="twitter:description" content="Calculate tips and split bills instantly for free. Choose tip percentage, split between people, and see totals. No signup — runs in your browser.">
+    <meta name="twitter:image" content="https://freetipcalculator.app/og-image.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "freetipcalculator.app",
+        "description": "Calculate tips and split bills instantly for free. Choose tip percentage, split between people, and see totals.",
+        "url": "https://freetipcalculator.app/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            { "@type": "Question", "name": "Is freetipcalculator.app completely free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. freetipcalculator.app is 100% free with no ads, no sign-up, and no usage limits. Calculate tips as often as you want." } },
+            { "@type": "Question", "name": "How do I calculate a tip with freetipcalculator.app?", "acceptedAnswer": { "@type": "Answer", "text": "Enter your bill amount, select a tip percentage (or type a custom one), choose how many people are splitting, and freetipcalculator.app shows the tip, total, and per-person amount instantly." } },
+            { "@type": "Question", "name": "What is a standard tip percentage?", "acceptedAnswer": { "@type": "Answer", "text": "In the US, 15-20% is standard for sit-down restaurants. 18% is a common default. For exceptional service, 25% or more is generous. freetipcalculator.app lets you pick any percentage." } },
+            { "@type": "Question", "name": "Can I split the bill between multiple people?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use the split control to divide the total evenly between 1 to 20 people. freetipcalculator.app shows the per-person amount including tip." } },
+            { "@type": "Question", "name": "Does freetipcalculator.app work offline?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. freetipcalculator.app is a Progressive Web App that works offline after your first visit. Add it to your home screen for instant access." } },
+            { "@type": "Question", "name": "Is my data private on freetipcalculator.app?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. All calculations happen in your browser. freetipcalculator.app has zero tracking, no analytics, and no server communication." } }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freetipcalculator.app/" }]
+    }
+    </script>
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #faf9f6; --surface: #f4f2ee; --border: #e8e4dd;
+            --text-primary: #1a1917; --text-secondary: #6b6760; --text-muted: #9e9b96;
+            --accent: #C49A2A; --accent-hover: #A8831F; --accent-text: #ffffff;
+            --destructive: #c0392b; --success: #27ae60;
+            --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
+            --font-body: 'Lora', serif; --font-ui: 'DM Sans', sans-serif;
+        }
+        html.dark {
+            --bg: #141412; --surface: #1e1c1a; --border: #2e2b27;
+            --text-primary: #f0ede8; --text-secondary: #9e9b96; --text-muted: #6b6760;
+            --accent: #D4A835; --accent-hover: #C49A2A; --accent-text: #ffffff;
+            --success: #2ecc71;
+            --shadow: 0 1px 3px rgba(0,0,0,0.3), 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        html { font-size: 15px; line-height: 1.6; }
+        body { font-family: var(--font-body); background: var(--bg); color: var(--text-primary); margin: 0; padding: 0; }
+
+        .app-wrapper { height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+
+        .header { height: 52px; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; border-bottom: 1px solid var(--border); background: var(--bg); flex-shrink: 0; }
+        .header-brand { font-family: var(--font-ui); font-size: 15px; font-weight: 600; color: var(--accent); text-decoration: none; }
+        .header-actions { display: flex; align-items: center; gap: 8px; }
+        .theme-toggle { font-family: var(--font-ui); font-size: 13px; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 6px 12px; cursor: pointer; color: var(--text-secondary); transition: all 0.15s ease; display: flex; align-items: center; gap: 6px; }
+        .theme-toggle:hover { background: var(--border); }
+
+        .main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 24px; overflow-y: auto; }
+
+        .calc { width: 100%; max-width: 440px; }
+
+        .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; box-shadow: var(--shadow); margin-bottom: 16px; }
+
+        .input-group { margin-bottom: 20px; }
+        .input-label { font-family: var(--font-ui); font-size: 12px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; display: block; }
+
+        .bill-input-wrap { position: relative; }
+        .bill-input-wrap .currency { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); font-family: var(--font-ui); font-size: 24px; font-weight: 700; color: var(--text-muted); }
+        .bill-input { width: 100%; font-family: var(--font-ui); font-size: 32px; font-weight: 700; background: var(--bg); border: 2px solid var(--border); border-radius: 10px; padding: 16px 16px 16px 40px; color: var(--text-primary); transition: all 0.15s ease; text-align: right; }
+        .bill-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(196,154,42,0.12); }
+        .bill-input::placeholder { color: var(--text-muted); font-weight: 400; font-size: 24px; }
+
+        .tip-presets { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+        .tip-btn { font-family: var(--font-ui); font-size: 15px; font-weight: 600; padding: 14px 8px; border-radius: 8px; border: 2px solid var(--border); background: var(--bg); color: var(--text-secondary); cursor: pointer; transition: all 0.15s ease; text-align: center; }
+        .tip-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .tip-btn.active { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+
+        .custom-tip-wrap { margin-top: 8px; position: relative; }
+        .custom-tip { width: 100%; font-family: var(--font-ui); font-size: 15px; font-weight: 500; background: var(--bg); border: 2px solid var(--border); border-radius: 8px; padding: 12px 32px 12px 16px; color: var(--text-primary); transition: all 0.15s ease; }
+        .custom-tip:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(196,154,42,0.12); }
+        .custom-tip::placeholder { color: var(--text-muted); }
+        .custom-tip-wrap .pct { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); font-family: var(--font-ui); font-size: 15px; font-weight: 600; color: var(--text-muted); }
+
+        .split-control { display: flex; align-items: center; gap: 16px; }
+        .split-btn { width: 44px; height: 44px; border-radius: 8px; border: 2px solid var(--border); background: var(--bg); font-family: var(--font-ui); font-size: 20px; font-weight: 700; color: var(--text-secondary); cursor: pointer; transition: all 0.15s ease; display: flex; align-items: center; justify-content: center; }
+        .split-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .split-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+        .split-value { font-family: var(--font-ui); font-size: 24px; font-weight: 700; color: var(--text-primary); min-width: 40px; text-align: center; }
+
+        .results { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .result-item { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 16px; text-align: center; }
+        .result-item.full { grid-column: 1 / -1; background: var(--accent); border-color: var(--accent); }
+        .result-label { font-family: var(--font-ui); font-size: 11px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+        .result-item.full .result-label { color: rgba(255,255,255,0.8); }
+        .result-value { font-family: var(--font-ui); font-size: 28px; font-weight: 700; color: var(--text-primary); }
+        .result-item.full .result-value { color: var(--accent-text); font-size: 36px; }
+
+        .reset-btn { width: 100%; font-family: var(--font-ui); font-size: 13px; font-weight: 500; padding: 10px; border-radius: 8px; border: 1px solid var(--border); background: transparent; color: var(--text-secondary); cursor: pointer; transition: all 0.15s ease; margin-top: 16px; }
+        .reset-btn:hover { background: var(--surface); }
+
+        .upgrade-prompt { max-width: 440px; width: 100%; margin: 0 auto; border-top: 1px solid var(--border); padding: 12px 0 0; }
+        .upgrade-prompt .upgrade-title { font-family: var(--font-ui); font-size: 13px; font-weight: 500; color: var(--text-secondary); }
+        .upgrade-prompt .upgrade-desc { font-family: var(--font-ui); font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+        .upgrade-prompt .upgrade-link { font-family: var(--font-ui); font-size: 12px; color: var(--accent); text-decoration: none; margin-top: 4px; display: inline-block; }
+
+        .status-bar { height: 32px; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; background: var(--surface); border-top: 1px solid var(--border); flex-shrink: 0; }
+        .status-bar span { font-family: var(--font-ui); font-size: 12px; color: var(--text-muted); }
+
+        .suite-badge { position: fixed; bottom: 40px; right: 16px; font-family: var(--font-ui); font-size: 11px; font-weight: 400; color: var(--text-muted); text-decoration: none; z-index: 10; }
+        .toast { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--text-primary); color: var(--bg); font-family: var(--font-ui); font-size: 13px; padding: 10px 20px; border-radius: 8px; opacity: 0; transition: all 0.15s ease; pointer-events: none; z-index: 1000; }
+        .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+        .seo-content { max-width: 720px; margin: 0 auto; padding: 64px 24px; font-family: var(--font-body); color: var(--text-primary); }
+        .seo-content h1 { font-size: 28px; font-weight: 700; margin-bottom: 24px; }
+        .seo-content h2 { font-size: 20px; font-weight: 600; margin-top: 32px; margin-bottom: 12px; }
+        .seo-content p { color: var(--text-secondary); margin-bottom: 16px; line-height: 1.7; }
+        .seo-content details { border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 8px; }
+        .seo-content summary { font-family: var(--font-ui); font-weight: 500; cursor: pointer; color: var(--text-primary); }
+        .seo-content details p { margin-top: 12px; margin-bottom: 0; }
+        .seo-footer { text-align: center; padding: 32px 24px; font-family: var(--font-ui); font-size: 12px; color: var(--text-muted); }
+        .more-tools { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); text-align: center; }
+        .more-tools-label { font-family: var(--font-ui); font-size: 11px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+        .more-tools-links { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+        .more-tools-links a { font-family: var(--font-ui); font-size: 12px; color: var(--accent); text-decoration: none; padding: 4px 10px; border: 1px solid var(--border); border-radius: 6px; transition: all 0.15s ease; }
+        .more-tools-links a:hover { background: var(--surface); }
+
+        @media (max-width: 768px) {
+            .main { padding: 16px; }
+            .card { padding: 16px; }
+            .bill-input { font-size: 28px; padding: 14px 14px 14px 36px; }
+            .bill-input-wrap .currency { font-size: 20px; }
+            .result-value { font-size: 22px; }
+            .result-item.full .result-value { font-size: 28px; }
+            .suite-badge .badge-prefix { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+    <header class="header">
+        <a href="/" class="header-brand">freetipcalculator.app</a>
+        <div class="header-actions">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <span class="toggle-icon">&#9728;&#65039;</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="main">
+        <div class="calc">
+            <div class="card">
+                <div class="input-group">
+                    <label class="input-label">Bill Amount</label>
+                    <div class="bill-input-wrap">
+                        <span class="currency">$</span>
+                        <input type="number" class="bill-input" id="billInput" placeholder="0.00" min="0" step="0.01" inputmode="decimal">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">Tip Percentage</label>
+                    <div class="tip-presets" id="tipPresets">
+                        <button class="tip-btn" data-tip="10">10%</button>
+                        <button class="tip-btn" data-tip="15">15%</button>
+                        <button class="tip-btn active" data-tip="18">18%</button>
+                        <button class="tip-btn" data-tip="20">20%</button>
+                        <button class="tip-btn" data-tip="22">22%</button>
+                        <button class="tip-btn" data-tip="25">25%</button>
+                        <button class="tip-btn" data-tip="30">30%</button>
+                        <button class="tip-btn" data-tip="0">No tip</button>
+                    </div>
+                    <div class="custom-tip-wrap">
+                        <input type="number" class="custom-tip" id="customTip" placeholder="Custom tip" min="0" max="100" step="1" inputmode="decimal">
+                        <span class="pct">%</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">Split Between</label>
+                    <div class="split-control">
+                        <button class="split-btn" id="splitMinus" disabled>&minus;</button>
+                        <span class="split-value" id="splitValue">1</span>
+                        <button class="split-btn" id="splitPlus">+</button>
+                        <span style="font-family:var(--font-ui);font-size:13px;color:var(--text-muted);">people</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results">
+                <div class="result-item">
+                    <div class="result-label">Tip Amount</div>
+                    <div class="result-value" id="tipAmount">$0.00</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-label">Total</div>
+                    <div class="result-value" id="totalAmount">$0.00</div>
+                </div>
+                <div class="result-item full">
+                    <div class="result-label">Per Person</div>
+                    <div class="result-value" id="perPerson">$0.00</div>
+                </div>
+            </div>
+
+            <button class="reset-btn" id="resetBtn">Reset</button>
+
+            <div class="upgrade-prompt" id="upgrade-prompt" style="margin-top:20px;">
+                <div class="upgrade-title">Multi-Currency &amp; Receipt Scanner</div>
+                <div class="upgrade-desc">Calculate tips in any currency and scan receipts with your camera</div>
+                <a href="https://freesuite.app" class="upgrade-link">Unlock with freesuite.app &middot; $2.88/mo</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="status-bar">
+        <span id="statusLeft">Ready</span>
+        <span>All processing happens in your browser &mdash; nothing uploaded</span>
+    </footer>
+    </div><!-- end app-wrapper -->
+
+    <a href="https://freesuite.app" class="suite-badge" target="_blank" rel="noopener">
+        <span class="badge-prefix">by </span>freesuite.app
+    </a>
+
+    <div class="toast" id="toast"></div>
+
+    <!-- SEO Content (below fold) -->
+    <div class="seo-content">
+        <h1>Free Tip Calculator Online &mdash; Calculate Tips and Split Bills</h1>
+
+        <p>freetipcalculator.app is a free online tip calculator that helps you figure out how much to tip and how to split the bill. Enter your bill amount, choose a tip percentage, select how many people are splitting, and see the results instantly. All calculations happen in your browser &mdash; freetipcalculator.app has no ads, no tracking, and no signup.</p>
+
+        <h2>How do I use freetipcalculator.app?</h2>
+        <p>Enter your bill total in the amount field. Select a tip percentage from the presets (10%, 15%, 18%, 20%, 22%, 25%, 30%) or type a custom percentage. Choose how many people are splitting the bill. freetipcalculator.app instantly shows the tip amount, the total including tip, and the per-person amount.</p>
+
+        <h2>What is a standard tip percentage?</h2>
+        <p>In the United States, 15-20% is standard for sit-down restaurants. 18% is a common default. For counter service or takeout, 10-15% is typical. For exceptional service, 25% or more is generous. Tipping customs vary by country &mdash; freetipcalculator.app lets you pick any percentage from 0 to 100.</p>
+
+        <h2>How do I split a restaurant bill evenly?</h2>
+        <p>Use the split control on freetipcalculator.app to divide the total (bill plus tip) equally between 1 to 20 people. The per-person amount updates instantly as you adjust the number of people. This is the easiest way to figure out what each person owes at a group dinner.</p>
+
+        <h2>How much should I tip for delivery?</h2>
+        <p>For food delivery, 15-20% of the order total is standard. For large or complex orders, or deliveries in bad weather, consider tipping more. freetipcalculator.app works for any tipping scenario &mdash; restaurants, delivery, rideshare, salons, or any service.</p>
+
+        <h2>Is freetipcalculator.app free and private?</h2>
+        <p>freetipcalculator.app is completely free with no usage limits and no account required. All calculations happen locally in your browser. There is no server communication, no analytics, no cookies, and no tracking. freetipcalculator.app is part of the Freesuite collection at freesuite.app.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <details><summary>Is freetipcalculator.app completely free?</summary><p>Yes. freetipcalculator.app is 100% free with no ads, no sign-up, and no usage limits. Calculate tips as often as you want.</p></details>
+        <details><summary>How do I calculate a tip with freetipcalculator.app?</summary><p>Enter your bill amount, select a tip percentage (or type a custom one), choose how many people are splitting, and freetipcalculator.app shows the tip, total, and per-person amount instantly.</p></details>
+        <details><summary>What is a standard tip percentage?</summary><p>In the US, 15-20% is standard for sit-down restaurants. 18% is a common default. For exceptional service, 25% or more is generous. freetipcalculator.app lets you pick any percentage.</p></details>
+        <details><summary>Can I split the bill between multiple people?</summary><p>Yes. Use the split control to divide the total evenly between 1 to 20 people. freetipcalculator.app shows the per-person amount including tip.</p></details>
+        <details><summary>Does freetipcalculator.app work offline?</summary><p>Yes. freetipcalculator.app is a Progressive Web App that works offline after your first visit. Add it to your home screen for instant access.</p></details>
+        <details><summary>Is my data private on freetipcalculator.app?</summary><p>Yes. All calculations happen in your browser. freetipcalculator.app has zero tracking, no analytics, and no server communication.</p></details>
+    </div>
+
+    <div class="seo-footer">
+        <p>&copy; freetipcalculator.app</p>
+        <div class="more-tools">
+            <div class="more-tools-label">More free tools from Freesuite</div>
+            <div class="more-tools-links">
+                <a href="https://freeunitconvert.app">Unit Converter</a>
+                <a href="https://freewordcounter.app">Word Counter</a>
+                <a href="https://freepasswordgenerator.app">Password Generator</a>
+                <a href="https://freejsonformatter.app">JSON Formatter</a>
+                <a href="https://freeqrcodegen.app">QR Code Generator</a>
+                <a href="https://freenotepad.app">Notepad</a>
+                <a href="https://freebase64.app">Base64 Encoder</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    /* ===== Dark Mode ===== */
+    (() => {
+        const toggle = document.getElementById('themeToggle');
+        const icon = toggle.querySelector('.toggle-icon');
+        const getTheme = () => { const s = localStorage.getItem('suite_theme'); if (s) return s; return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; };
+        const apply = (t) => { document.documentElement.classList.toggle('dark', t === 'dark'); icon.textContent = t === 'dark' ? '\uD83C\uDF19' : '\u2600\uFE0F'; localStorage.setItem('suite_theme', t); };
+        apply(getTheme());
+        toggle.addEventListener('click', () => apply(document.documentElement.classList.contains('dark') ? 'light' : 'dark'));
+    })();
+
+    /* ===== State ===== */
+    let tipPercent = 18;
+    let splitCount = 1;
+
+    const billInput = document.getElementById('billInput');
+    const customTip = document.getElementById('customTip');
+    const splitValue = document.getElementById('splitValue');
+    const tipAmount = document.getElementById('tipAmount');
+    const totalAmount = document.getElementById('totalAmount');
+    const perPerson = document.getElementById('perPerson');
+
+    const fmt = (n) => '$' + n.toFixed(2);
+
+    /* ===== Calculate ===== */
+    const calculate = () => {
+        const bill = parseFloat(billInput.value) || 0;
+        const tip = bill * (tipPercent / 100);
+        const total = bill + tip;
+        const pp = splitCount > 0 ? total / splitCount : total;
+
+        tipAmount.textContent = fmt(tip);
+        totalAmount.textContent = fmt(total);
+        perPerson.textContent = fmt(pp);
+
+        document.getElementById('statusLeft').textContent = bill > 0 ? `${tipPercent}% tip on ${fmt(bill)}` : 'Ready';
+    };
+
+    /* ===== Tip Presets ===== */
+    document.querySelectorAll('.tip-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.tip-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            tipPercent = parseInt(btn.dataset.tip);
+            customTip.value = '';
+            calculate();
+        });
+    });
+
+    /* ===== Custom Tip ===== */
+    customTip.addEventListener('input', () => {
+        const val = parseFloat(customTip.value);
+        if (!isNaN(val) && val >= 0) {
+            tipPercent = val;
+            document.querySelectorAll('.tip-btn').forEach(b => b.classList.remove('active'));
+        } else if (customTip.value === '') {
+            tipPercent = 18;
+            document.querySelectorAll('.tip-btn[data-tip="18"]').forEach(b => b.classList.add('active'));
+        }
+        calculate();
+    });
+
+    /* ===== Split ===== */
+    document.getElementById('splitMinus').addEventListener('click', () => {
+        if (splitCount > 1) { splitCount--; splitValue.textContent = splitCount; document.getElementById('splitMinus').disabled = splitCount <= 1; calculate(); }
+    });
+    document.getElementById('splitPlus').addEventListener('click', () => {
+        if (splitCount < 20) { splitCount++; splitValue.textContent = splitCount; document.getElementById('splitMinus').disabled = false; calculate(); }
+    });
+
+    /* ===== Bill Input ===== */
+    billInput.addEventListener('input', calculate);
+
+    /* ===== Reset ===== */
+    document.getElementById('resetBtn').addEventListener('click', () => {
+        billInput.value = '';
+        customTip.value = '';
+        tipPercent = 18;
+        splitCount = 1;
+        splitValue.textContent = '1';
+        document.getElementById('splitMinus').disabled = true;
+        document.querySelectorAll('.tip-btn').forEach(b => b.classList.remove('active'));
+        document.querySelector('.tip-btn[data-tip="18"]').classList.add('active');
+        calculate();
+    });
+
+    /* ===== Init ===== */
+    calculate();
+    billInput.focus();
+
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
+    </script>
+</body>
+</html>

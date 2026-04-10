@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Bill Splitter Online — Split Restaurant Bills | freetipcalculator.app</title>
+<meta name="description" content="Split restaurant bills evenly with tip included. Free bill splitter for groups — no signup, runs in your browser.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://freetipcalculator.app/pages/bill-splitter">
+<meta name="theme-color" content="#faf9f6">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" href="/favicon.png">
+<meta property="og:title" content="Free Bill Splitter Online — Split Restaurant Bills | freetipcalculator.app">
+<meta property="og:description" content="Split restaurant bills evenly with tip included. Free bill splitter for groups — no signup, runs in your browser.">
+<meta property="og:image" content="https://freetipcalculator.app/og-image.svg">
+<meta property="og:url" content="https://freetipcalculator.app/pages/bill-splitter">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Bill Splitter Online — Split Restaurant Bills | freetipcalculator.app">
+<meta name="twitter:description" content="Split restaurant bills evenly with tip included. Free bill splitter for groups — no signup, runs in your browser.">
+<meta name="twitter:image" content="https://freetipcalculator.app/og-image.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Free Bill Splitter Online — Split Restaurant Bills",
+  "description": "Split restaurant bills evenly with tip included. Free bill splitter for groups — no signup, runs in your browser.",
+  "author": { "@type": "Organization", "name": "freetipcalculator.app" },
+  "publisher": { "@type": "Organization", "name": "freetipcalculator.app" },
+  "datePublished": "2026-04-11",
+  "dateModified": "2026-04-11"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freetipcalculator.app/" },
+    { "@type": "ListItem", "position": 2, "name": "Bill Splitter", "item": "https://freetipcalculator.app/pages/bill-splitter" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I split a restaurant bill evenly with tip?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Add the tip to the total bill first, then divide by the number of people. For example, a $120 bill with 20% tip ($24) totals $144. Split four ways, each person pays $36. freetipcalculator.app does this math instantly — enter your bill, set the tip percentage and number of people, and get each person's share."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it better to split the bill evenly or pay for what you ordered?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Even splitting is faster and simpler, and works well when everyone ordered similarly priced items. Itemized splitting is fairer when there are big price differences — for example, if one person had water while others had cocktails. For most casual dinners, even splitting is the social norm."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should everyone tip the same percentage when splitting a bill?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. When splitting a bill, agree on one tip percentage for the whole table. This keeps things simple and ensures the server receives a fair tip. 18-20% is standard. Use freetipcalculator.app to calculate the per-person amount including tip so everyone pays the same fair share."
+      }
+    }
+  ]
+}
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #faf9f6;
+  --surface: #f4f2ee;
+  --border: #e8e4dd;
+  --text-primary: #1a1917;
+  --text-secondary: #6b6760;
+  --text-muted: #9e9b96;
+  --accent: #C49A2A;
+  --accent-hover: #A8831F;
+  --accent-text: #ffffff;
+  --destructive: #c0392b;
+  --success: #27ae60;
+  --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
+}
+
+html.dark {
+  --bg: #141412;
+  --surface: #1e1c1a;
+  --border: #2e2b27;
+  --text-primary: #f0ede8;
+  --text-secondary: #9e9b96;
+  --text-muted: #6b6760;
+  --accent: #D4A835;
+  --accent-hover: #C49A2A;
+  --accent-text: #ffffff;
+  --success: #2ecc71;
+  --shadow: 0 1px 3px rgba(0,0,0,0.3), 0 2px 8px rgba(0,0,0,0.2);
+}
+
+body {
+  font-family: "Lora", serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--bg);
+}
+
+header {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand {
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.brand:hover { opacity: 0.85; }
+
+.theme-toggle {
+  width: 48px;
+  height: 26px;
+  border-radius: 13px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.15s ease;
+}
+
+.theme-toggle::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  top: 2px;
+  left: 2px;
+  transition: all 0.15s ease;
+}
+
+html.dark .theme-toggle::after {
+  left: 24px;
+}
+
+.theme-toggle .sun, .theme-toggle .moon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  line-height: 1;
+}
+
+.theme-toggle .sun { left: 6px; }
+.theme-toggle .moon { right: 5px; }
+
+main {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 48px 24px 64px;
+}
+
+.breadcrumb {
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+.breadcrumb a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb span { margin: 0 8px; }
+
+h1 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+}
+
+h2 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 48px 0 16px;
+  color: var(--text-primary);
+}
+
+p {
+  margin-bottom: 16px;
+  color: var(--text-secondary);
+}
+
+ul, ol {
+  margin: 0 0 16px 24px;
+  color: var(--text-secondary);
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+.example-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+  margin: 24px 0;
+}
+
+.example-box h3 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.example-box p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.example-box .result {
+  font-family: "DM Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+.steps-list {
+  counter-reset: steps;
+  list-style: none;
+  margin-left: 0;
+  padding: 0;
+}
+
+.steps-list li {
+  counter-increment: steps;
+  padding: 16px 16px 16px 48px;
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.steps-list li::before {
+  content: counter(steps);
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.faq-section { margin-top: 48px; }
+
+details {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 12px;
+  background: var(--surface);
+}
+
+summary {
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 16px 20px;
+  cursor: pointer;
+  color: var(--text-primary);
+  list-style: none;
+}
+
+summary::-webkit-details-marker { display: none; }
+
+summary::before {
+  content: "+";
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  margin-right: 12px;
+  color: var(--accent);
+}
+
+details[open] summary::before { content: "−"; }
+
+details .answer {
+  padding: 0 20px 16px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.cta-section {
+  text-align: center;
+  margin: 48px 0;
+  padding: 32px;
+  background: var(--surface);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.cta-section p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.cta-btn {
+  display: inline-block;
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 24px;
+  background: var(--accent);
+  color: var(--accent-text);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.cta-btn:hover { background: var(--accent-hover); }
+
+.more-tools {
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+.more-tools h3 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.tool-link {
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 12px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: all 0.15s ease;
+}
+
+.tool-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.suite-badge {
+  position: fixed;
+  bottom: 40px;
+  right: 16px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text-muted);
+  z-index: 90;
+}
+
+.suite-badge a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.suite-badge a:hover { color: var(--accent); }
+
+footer.page-footer {
+  text-align: center;
+  padding: 24px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  header { padding: 0 16px; }
+  main { padding: 32px 16px 48px; }
+  h1 { font-size: 24px; }
+  h2 { font-size: 18px; }
+  .tools-grid { grid-template-columns: 1fr; }
+  .suite-badge .full { display: none; }
+  .suite-badge .short { display: inline; }
+}
+
+@media (min-width: 769px) {
+  .suite-badge .short { display: none; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="brand">freetipcalculator.app</a>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+    <span class="sun">☀</span>
+    <span class="moon">☾</span>
+  </button>
+</header>
+
+<main>
+  <nav class="breadcrumb">
+    <a href="/">Home</a><span>/</span>Bill Splitter
+  </nav>
+
+  <article>
+    <h1>Free Bill Splitter Online — Split Restaurant Bills with Tip Included</h1>
+
+    <p>Splitting a restaurant bill should take seconds, not minutes of awkward mental math at the table. freetipcalculator.app calculates each person's share including tip instantly. Enter the bill total, choose a tip percentage, set the number of people, and get the per-person amount. No signup, no app download, no ads — just open it in your browser.</p>
+
+    <p>The bill splitter on freetipcalculator.app runs entirely in your browser. Your bill amount is never sent to any server. It works offline after your first visit, so you can use it even without cell service.</p>
+
+    <h2>How to Split a Bill with Tip in 3 Steps</h2>
+
+    <ol class="steps-list">
+      <li>Open freetipcalculator.app on your phone and enter the total bill amount.</li>
+      <li>Select your tip percentage (15%, 18%, 20%, or enter a custom amount).</li>
+      <li>Set the number of people splitting the bill. Each person's share appears instantly.</li>
+    </ol>
+
+    <div class="example-box">
+      <h3>Example: Dinner for Four</h3>
+      <p>Bill total: $156.00</p>
+      <p>Tip: 20% = $31.20</p>
+      <p>Total with tip: $187.20</p>
+      <p>Split 4 ways:</p>
+      <p class="result">$46.80 per person</p>
+    </div>
+
+    <h2>When Should You Split Evenly vs Pay for What You Ordered?</h2>
+
+    <p>Even splitting works best for most casual dinners where everyone ordered similarly priced items. It is faster, avoids the awkwardness of itemizing, and small differences tend to even out over time among friends who eat together regularly.</p>
+
+    <p>Itemized splitting is more appropriate when there are significant price differences. If one person ordered a $12 salad while another had a $45 steak, an even split feels unfair. Other situations where itemized splitting makes sense:</p>
+
+    <ul>
+      <li>Someone did not drink alcohol while others ordered bottles of wine</li>
+      <li>One person only had an appetizer while the rest had full meals</li>
+      <li>The group includes someone on a tight budget</li>
+      <li>It is a work dinner where people want to expense their exact share</li>
+    </ul>
+
+    <p>Even in itemized splits, the tip should be calculated on the total bill and split proportionally. freetipcalculator.app makes the math easy either way.</p>
+
+    <h2>How to Handle Common Bill-Splitting Situations</h2>
+
+    <p><strong>Someone arrives late and only had drinks:</strong> Ask them to contribute just for their drinks plus a proportional share of the tip. Do not force an even split when someone clearly consumed less.</p>
+
+    <p><strong>One person wants to treat the table:</strong> Let them. Calculate the total with tip using freetipcalculator.app so they know the exact amount. Do not argue — just say thank you and offer to get the next one.</p>
+
+    <p><strong>The restaurant will not split the check:</strong> One person pays the full amount and others send their share via Venmo, Zelle, or cash. Use freetipcalculator.app to determine what each person owes.</p>
+
+    <p><strong>Large group with auto-gratuity:</strong> Many restaurants add 18-20% gratuity automatically for groups of 6 or more. Check the bill before adding additional tip. If the auto-gratuity is already included, just divide the total by the number of people.</p>
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <details>
+        <summary>How do I split a restaurant bill evenly with tip?</summary>
+        <div class="answer">Add the tip to the total bill first, then divide by the number of people. For example, a $120 bill with 20% tip ($24) totals $144. Split four ways, each person pays $36. freetipcalculator.app does this math instantly — enter your bill, set the tip percentage and number of people, and get each person's share.</div>
+      </details>
+
+      <details>
+        <summary>Is it better to split the bill evenly or pay for what you ordered?</summary>
+        <div class="answer">Even splitting is faster and simpler, and works well when everyone ordered similarly priced items. Itemized splitting is fairer when there are big price differences — for example, if one person had water while others had cocktails. For most casual dinners, even splitting is the social norm.</div>
+      </details>
+
+      <details>
+        <summary>Should everyone tip the same percentage when splitting a bill?</summary>
+        <div class="answer">Yes. When splitting a bill, agree on one tip percentage for the whole table. This keeps things simple and ensures the server receives a fair tip. 18-20% is standard. Use freetipcalculator.app to calculate the per-person amount including tip so everyone pays the same fair share.</div>
+      </details>
+    </section>
+
+    <div class="cta-section">
+      <p>Split your next restaurant bill in seconds — free, private, works offline.</p>
+      <a href="/" class="cta-btn">Open Bill Splitter</a>
+    </div>
+  </article>
+
+  <div class="more-tools">
+    <h3>More Free Tools</h3>
+    <div class="tools-grid">
+      <a href="https://freeunitconvert.app" class="tool-link">Unit Converter</a>
+      <a href="https://freewordcounter.app" class="tool-link">Word Counter</a>
+      <a href="https://freepasswordgenerator.app" class="tool-link">Password Generator</a>
+      <a href="https://freejsonformatter.app" class="tool-link">JSON Formatter</a>
+      <a href="https://freeqrcodegen.app" class="tool-link">QR Code Generator</a>
+      <a href="https://freenotepad.app" class="tool-link">Notepad</a>
+    </div>
+  </div>
+</main>
+
+<div class="suite-badge">
+  <a href="https://freesuite.app"><span class="full">by freesuite.app</span><span class="short">freesuite.app</span></a>
+</div>
+
+<footer class="page-footer">
+  &copy; freetipcalculator.app
+</footer>
+
+<script>
+(function() {
+  const toggle = document.getElementById('themeToggle');
+  const html = document.documentElement;
+
+  function setTheme(dark) {
+    html.classList.toggle('dark', dark);
+    localStorage.setItem('suite_theme', dark ? 'dark' : 'light');
+  }
+
+  const saved = localStorage.getItem('suite_theme');
+  if (saved) {
+    setTheme(saved === 'dark');
+  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    setTheme(true);
+  }
+
+  toggle.addEventListener('click', function() {
+    setTheme(!html.classList.contains('dark'));
+  });
+})();
+</script>
+</body>
+</html>
